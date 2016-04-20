@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String randomLettersString = new String();
                 for(String s: randomLetters){
-                    randomLettersString+= s + " , ";
+                    randomLettersString+= s;
                 }
                 Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 intent.putExtra("randomLettersString", randomLettersString);
