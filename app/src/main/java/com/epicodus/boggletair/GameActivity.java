@@ -50,18 +50,19 @@ public class GameActivity extends AppCompatActivity {
                     int counter = 0;
                     for (int i = 0; i < userArrayList.size(); i++) {
                         for (int j = 0; j < randomLetterArrayList.size(); j++) {
-                            if (counter == userArrayList.size()) {
-                                rightWords.add(userWord);
-                                Toast.makeText(GameActivity.this, "great word choice", Toast.LENGTH_SHORT).show();
-
-                            } else if (userArrayList.get(i).toString().equals(randomLetterArrayList.get(j).toString())) {
+                            if (userArrayList.get(i).toString().equals(randomLetterArrayList.get(j).toString())) {
                                 randomLetterArrayList.remove(j);
-                                counter ++;
+                                counter++;
 
-                            } else {
-                                Toast.makeText(GameActivity.this, "NOT a BOGGLE word", Toast.LENGTH_SHORT).show();
                             }
                         }
+                    }
+                    if (counter == userArrayList.size()) {
+                        rightWords.add(userWord);
+                        Toast.makeText(GameActivity.this, "great word choice", Toast.LENGTH_SHORT).show();
+
+                    }  else {
+                        Toast.makeText(GameActivity.this, "NOT a BOGGLE word", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(GameActivity.this, "UNEXPECTED ERROR", Toast.LENGTH_SHORT).show();
